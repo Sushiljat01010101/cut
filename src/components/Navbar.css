@@ -224,7 +224,6 @@
 @media (max-width: 900px) {
   .navbar__links { display: none; }
   .navbar__phone { display: none; }
-  .gold-btn:not(.navbar__actions .gold-btn) { display: none; }
   .navbar__actions .gold-btn { display: none; }
   .navbar__burger { display: flex; }
 }
