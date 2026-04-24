@@ -15,8 +15,8 @@ export default function BookingModal({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const msg = `Hi! I'd like to book an appointment at Stylen A Shine.%0AName: ${form.name}%0APhone: ${form.phone}%0AService: ${form.service}%0ADate: ${form.date}%0ATime: ${form.time}`
-    window.open(`https://wa.me/918439975439?text=${msg}`, '_blank')
+    const msg = encodeURIComponent(`Hi! I'd like to book an appointment at Stylen A Shine.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${form.service}\nDate: ${form.date}\nTime: ${form.time}`)
+    window.location.href = `https://wa.me/918439975439?text=${msg}`
     setSubmitted(true)
   }
 
