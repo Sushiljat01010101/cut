@@ -14,25 +14,33 @@ import './App.css'
 
 function App() {
   const [showBooking, setShowBooking] = useState(false)
+  const [selectedService, setSelectedService] = useState('')
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     setTimeout(() => setLoaded(true), 100)
   }, [])
 
+  const handleBooking = (serviceTitle = '') => {
+    // If an event object is passed by accident from a raw onClick, ignore it.
+    const service = typeof serviceTitle === 'string' ? serviceTitle : ''
+    setSelectedService(service)
+    setShowBooking(true)
+  }
+
   return (
     <div className={`app ${loaded ? 'app--loaded' : ''}`}>
       <ParticlesBackground />
-      <Navbar onBooking={() => setShowBooking(true)} />
-      <Hero onBooking={() => setShowBooking(true)} />
-      <Services />
+      <Navbar onBooking={handleBooking} />
+      <Hero onBooking={handleBooking} />
+      <Services onBooking={handleBooking} />
       <About />
       <Gallery />
       <Reviews />
       <PopularTimes />
       <Location />
-      <Footer onBooking={() => setShowBooking(true)} />
-      {showBooking && <BookingModal onClose={() => setShowBooking(false)} />}
+      <Footer onBooking={handleBooking} />
+      {showBooking && <BookingModal initialService={selectedService} onClose={() => setShowBooking(false)} />}
     </div>
   )
 }

@@ -26,7 +26,7 @@ const services = [
   { category: 'Specialty', icon: <FiDroplet />, title: 'Pedicure', desc: 'Relaxing spa pedicures for smooth, soft, and pampered feet.', price: 'From ₹250' },
 ]
 
-export default function Services() {
+export default function Services({ onBooking }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
   const [activeTab, setActiveTab] = useState('All')
 
@@ -74,7 +74,7 @@ export default function Services() {
               transition={{ duration: 0.4 }}
             >
               {services.map((s, i) => (
-                <div key={s.title} className="service-card service-card--slide">
+                <div key={s.title} className="service-card service-card--slide" onClick={() => onBooking(s.title)}>
                   {s.popular && (
                     <div className="service-card__popular">
                       <FiStar size={10} /> Popular
@@ -109,6 +109,7 @@ export default function Services() {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.35, delay: i * 0.05 }}
                     className="service-card"
+                    onClick={() => onBooking(s.title)}
                   >
                     {s.popular && (
                       <div className="service-card__popular">
