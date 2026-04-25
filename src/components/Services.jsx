@@ -63,34 +63,71 @@ export default function Services() {
           ))}
         </div>
 
-        <motion.div layout className="services__grid">
-          <AnimatePresence mode="popLayout">
-            {filteredServices.map((s, i) => (
-              <motion.div
-                key={s.title}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.35, delay: i * 0.05 }}
-                className="service-card"
-              >
-                {s.popular && (
-                  <div className="service-card__popular">
-                    <FiStar size={10} /> Popular
+        <AnimatePresence mode="wait">
+          {activeTab === 'All' ? (
+            <motion.div
+              key="slider"
+              className="services__slider"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              {services.map((s, i) => (
+                <div key={s.title} className="service-card service-card--slide">
+                  {s.popular && (
+                    <div className="service-card__popular">
+                      <FiStar size={10} /> Popular
+                    </div>
+                  )}
+                  <div className="service-card__icon">{s.icon}</div>
+                  <h3 className="service-card__title">{s.title}</h3>
+                  <p className="service-card__desc">{s.desc}</p>
+                  <div className="service-card__footer">
+                    <span className="service-card__price">{s.price}</span>
+                    <div className="service-card__arrow">→</div>
                   </div>
-                )}
-                <div className="service-card__icon">{s.icon}</div>
-                <h3 className="service-card__title">{s.title}</h3>
-                <p className="service-card__desc">{s.desc}</p>
-                <div className="service-card__footer">
-                  <span className="service-card__price">{s.price}</span>
-                  <div className="service-card__arrow">→</div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key="grid"
+              className="services__grid"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredServices.map((s, i) => (
+                  <motion.div
+                    key={s.title}
+                    layout
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.35, delay: i * 0.05 }}
+                    className="service-card"
+                  >
+                    {s.popular && (
+                      <div className="service-card__popular">
+                        <FiStar size={10} /> Popular
+                      </div>
+                    )}
+                    <div className="service-card__icon">{s.icon}</div>
+                    <h3 className="service-card__title">{s.title}</h3>
+                    <p className="service-card__desc">{s.desc}</p>
+                    <div className="service-card__footer">
+                      <span className="service-card__price">{s.price}</span>
+                      <div className="service-card__arrow">→</div>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   )

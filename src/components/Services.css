@@ -67,6 +67,41 @@
   box-shadow: 0 4px 16px rgba(212,175,55,0.25);
 }
 
+.services__slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 30px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.services__slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.services__slider::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.services__slider::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.services__slider::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+.service-card--slide {
+  min-width: 350px;
+  max-width: 350px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
 .services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
