@@ -6,24 +6,24 @@ import { GiBeard, GiSoap, GiHairStrands, GiRazor } from 'react-icons/gi'
 import './Services.css'
 
 const services = [
-  { category: 'Hair Care', icon: <FiScissors />, title: 'Haircut', desc: 'Precision haircuts and modern styles tailored to your look.', price: 'From ₹150', popular: true },
-  { category: 'Hair Care', icon: <GiHairStrands />, title: 'Hairstyling', desc: 'Expert hairstyling for every special occasion and daily elegance.', price: 'From ₹200' },
-  { category: 'Hair Care', icon: <FiStar />, title: 'Balayage', desc: 'Premium balayage and coloring for a vibrant, sun-kissed finish.', price: 'From ₹1500', popular: true },
-  { category: 'Hair Care', icon: <FiDroplet />, title: 'Blow dry', desc: 'Professional blow dry for a flawless, bouncy, and smooth finish.', price: 'From ₹150' },
-  { category: 'Hair Care', icon: <FiDroplet />, title: 'Shampoo & Wash', desc: 'Deep cleanse and restorative hair treatments for healthy hair.', price: 'From ₹100' },
+  { category: 'Hair Care', img: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80', title: 'Haircut', desc: 'Precision haircuts and modern styles tailored to your look.', price: 'From ₹150', popular: true },
+  { category: 'Hair Care', img: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=600&q=80', title: 'Hairstyling', desc: 'Expert hairstyling for every special occasion and daily elegance.', price: 'From ₹200' },
+  { category: 'Hair Care', img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80', title: 'Balayage', desc: 'Premium balayage and coloring for a vibrant, sun-kissed finish.', price: 'From ₹1500', popular: true },
+  { category: 'Hair Care', img: 'https://images.unsplash.com/photo-1582230200305-65a8e0f63b46?w=600&q=80', title: 'Blow dry', desc: 'Professional blow dry for a flawless, bouncy, and smooth finish.', price: 'From ₹150' },
+  { category: 'Hair Care', img: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80', title: 'Shampoo & Wash', desc: 'Deep cleanse and restorative hair treatments for healthy hair.', price: 'From ₹100' },
   
-  { category: 'Skin & Face', icon: <GiSoap />, title: 'Facials', desc: 'Rejuvenating facials using premium products for glowing skin.', price: 'From ₹300', popular: true },
-  { category: 'Skin & Face', icon: <FiUser />, title: 'Skin care', desc: 'Advanced skincare routines and treatments for a healthy complexion.', price: 'From ₹400' },
-  { category: 'Skin & Face', icon: <FiStar />, title: 'Make-up services', desc: 'Flawless makeup application by experienced professional artists.', price: 'From ₹500' },
+  { category: 'Skin & Face', img: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80', title: 'Facials', desc: 'Rejuvenating facials using premium products for glowing skin.', price: 'From ₹300', popular: true },
+  { category: 'Skin & Face', img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80', title: 'Skin care', desc: 'Advanced skincare routines and treatments for a healthy complexion.', price: 'From ₹400' },
+  { category: 'Skin & Face', img: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80', title: 'Make-up services', desc: 'Flawless makeup application by experienced professional artists.', price: 'From ₹500' },
   
-  { category: 'Spa & Body', icon: <FiUser />, title: 'Massage', desc: 'Soothing body massages to relieve stress and rejuvenate your muscles.', price: 'From ₹500', popular: true },
-  { category: 'Spa & Body', icon: <GiSoap />, title: 'Spa services', desc: 'Luxurious spa treatments for ultimate relaxation and pampering.', price: 'From ₹800' },
-  { category: 'Spa & Body', icon: <FiZap />, title: 'Body waxing', desc: 'Smooth, hygienic, and gentle body waxing services.', price: 'From ₹300' },
-  { category: 'Spa & Body', icon: <FiStar />, title: 'Tanning', desc: 'Professional artificial tanning for a beautiful even glow.', price: 'From ₹400' },
+  { category: 'Spa & Body', img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80', title: 'Massage', desc: 'Soothing body massages to relieve stress and rejuvenate your muscles.', price: 'From ₹500', popular: true },
+  { category: 'Spa & Body', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80', title: 'Spa services', desc: 'Luxurious spa treatments for ultimate relaxation and pampering.', price: 'From ₹800' },
+  { category: 'Spa & Body', img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80', title: 'Body waxing', desc: 'Smooth, hygienic, and gentle body waxing services.', price: 'From ₹300' },
+  { category: 'Spa & Body', img: 'https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?w=600&q=80', title: 'Tanning', desc: 'Professional artificial tanning for a beautiful even glow.', price: 'From ₹400' },
 
-  { category: 'Specialty', icon: <FiStar />, title: 'Bridal services', desc: 'Complete luxurious bridal packages to make your special day perfect.', price: 'Custom' },
-  { category: 'Specialty', icon: <FiDroplet />, title: 'Manicure', desc: 'Classic and spa manicures for perfectly groomed and beautiful hands.', price: 'From ₹200' },
-  { category: 'Specialty', icon: <FiDroplet />, title: 'Pedicure', desc: 'Relaxing spa pedicures for smooth, soft, and pampered feet.', price: 'From ₹250' },
+  { category: 'Specialty', img: 'https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=600&q=80', title: 'Bridal services', desc: 'Complete luxurious bridal packages to make your special day perfect.', price: 'Custom' },
+  { category: 'Specialty', img: 'https://images.unsplash.com/photo-1519014816548-bf5fe059e98b?w=600&q=80', title: 'Manicure', desc: 'Classic and spa manicures for perfectly groomed and beautiful hands.', price: 'From ₹200' },
+  { category: 'Specialty', img: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=600&q=80', title: 'Pedicure', desc: 'Relaxing spa pedicures for smooth, soft, and pampered feet.', price: 'From ₹250' },
 ]
 
 export default function Services({ onBooking }) {
@@ -80,12 +80,16 @@ export default function Services({ onBooking }) {
                       <FiStar size={10} /> Popular
                     </div>
                   )}
-                  <div className="service-card__icon">{s.icon}</div>
-                  <h3 className="service-card__title">{s.title}</h3>
-                  <p className="service-card__desc">{s.desc}</p>
-                  <div className="service-card__footer">
-                    <span className="service-card__price">{s.price}</span>
-                    <div className="service-card__arrow">→</div>
+                  <div className="service-card__cover">
+                    <img src={s.img} alt={s.title} onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png' }} />
+                  </div>
+                  <div className="service-card__content">
+                    <h3 className="service-card__title">{s.title}</h3>
+                    <p className="service-card__desc">{s.desc}</p>
+                    <div className="service-card__footer">
+                      <span className="service-card__price">{s.price}</span>
+                      <div className="service-card__arrow">→</div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -116,12 +120,16 @@ export default function Services({ onBooking }) {
                         <FiStar size={10} /> Popular
                       </div>
                     )}
-                    <div className="service-card__icon">{s.icon}</div>
-                    <h3 className="service-card__title">{s.title}</h3>
-                    <p className="service-card__desc">{s.desc}</p>
-                    <div className="service-card__footer">
-                      <span className="service-card__price">{s.price}</span>
-                      <div className="service-card__arrow">→</div>
+                    <div className="service-card__cover">
+                      <img src={s.img} alt={s.title} onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png' }} />
+                    </div>
+                    <div className="service-card__content">
+                      <h3 className="service-card__title">{s.title}</h3>
+                      <p className="service-card__desc">{s.desc}</p>
+                      <div className="service-card__footer">
+                        <span className="service-card__price">{s.price}</span>
+                        <div className="service-card__arrow">→</div>
+                      </div>
                     </div>
                   </motion.div>
                 ))}
