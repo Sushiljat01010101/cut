@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { FiPhone, FiMapPin, FiStar } from 'react-icons/fi'
+import { FiPhone, FiMapPin, FiStar, FiInstagram } from 'react-icons/fi'
 import { FaWhatsapp } from 'react-icons/fa'
 import './Hero.css'
 
@@ -90,6 +90,15 @@ export default function Hero({ onBooking }) {
           >
             <FaWhatsapp />
             <span>WhatsApp Us</span>
+          </a>
+          <a
+            href="https://www.instagram.com/stylen_a_shine_unisex_salon?igsh=ZTRtbjl5ZDk2NGRq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero__instagram"
+          >
+            <FiInstagram />
+            <span>Follow Us</span>
           </a>
         </motion.div>
 

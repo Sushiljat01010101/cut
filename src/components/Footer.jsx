@@ -36,7 +36,7 @@ export default function Footer({ onBooking }) {
               <a href="https://maps.app.goo.gl/KXKJ45ZcezBK3EXV9" target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Google Maps">
                 <FaGoogle />
               </a>
-              <a href="#" className="footer__social" aria-label="Instagram">
+              <a href="https://www.instagram.com/stylen_a_shine_unisex_salon?igsh=ZTRtbjl5ZDk2NGRq" target="_blank" rel="noopener noreferrer" className="footer__social" aria-label="Instagram">
                 <FiInstagram />
               </a>
             </div>

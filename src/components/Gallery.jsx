@@ -4,13 +4,13 @@ import { useInView } from 'react-intersection-observer'
 import { FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import './Gallery.css'
 
-const photos = [
-  { id: 1, src: '/hero.png', alt: 'Salon Interior', category: 'Interior' },
-  { id: 2, src: '/tools.png', alt: 'Barber Tools', category: 'Tools' },
-  { id: 3, src: '/hero.png', alt: 'Haircut Service', category: 'Haircut' },
-  { id: 4, src: '/tools.png', alt: 'Professional Scissors', category: 'Tools' },
-  { id: 5, src: '/hero.png', alt: 'Salon Ambiance', category: 'Interior' },
-  { id: 6, src: '/tools.png', alt: 'Grooming Products', category: 'Products' },
+const media = [
+  { id: 1, type: 'video', src: '/video_2026-04-25_09-12-34.mp4', alt: 'Haircut Service Video', category: 'Haircut' },
+  { id: 2, type: 'video', src: '/video_2026-04-25_09-14-37.mp4', alt: 'Styling Session', category: 'Styling' },
+  { id: 3, type: 'video', src: '/video_2026-04-25_09-15-00.mp4', alt: 'Salon Ambiance', category: 'Interior' },
+  { id: 4, type: 'video', src: '/video_2026-04-25_09-15-28.mp4', alt: 'Grooming Services', category: 'Products' },
+  { id: 5, type: 'video', src: '/video_2026-04-25_09-16-03.mp4', alt: 'Fade Highlight', category: 'Haircut' },
+  { id: 6, type: 'image', src: '/best.png', alt: 'Professional Shop', category: 'Interior' },
 ]
 
 export default function Gallery() {
@@ -19,8 +19,8 @@ export default function Gallery() {
 
   const openLightbox = (idx) => setLightbox(idx)
   const closeLightbox = () => setLightbox(null)
-  const prev = () => setLightbox((l) => (l - 1 + photos.length) % photos.length)
-  const next = () => setLightbox((l) => (l + 1) % photos.length)
+  const prev = () => setLightbox((l) => (l - 1 + media.length) % media.length)
+  const next = () => setLightbox((l) => (l + 1) % media.length)
 
   return (
     <section className="gallery" id="gallery" ref={ref}>
@@ -37,7 +37,7 @@ export default function Gallery() {
         </motion.div>
 
         <div className="gallery__grid">
-          {photos.map((p, i) => (
+          {media.map((p, i) => (
             <motion.div
               key={p.id}
               className={`gallery__item ${i === 0 ? 'gallery__item--wide' : ''}`}
@@ -46,10 +46,14 @@ export default function Gallery() {
               transition={{ delay: i * 0.08, duration: 0.5 }}
               onClick={() => openLightbox(i)}
             >
-              <img src={p.src} alt={p.alt} />
+              {p.type === 'video' ? (
+                <video src={p.src} autoPlay loop muted playsInline />
+              ) : (
+                <img src={p.src} alt={p.alt} />
+              )}
               <div className="gallery__item-overlay">
                 <span className="gallery__item-cat">{p.category}</span>
-                <span className="gallery__item-zoom">⊕ View</span>
+                <span className="gallery__item-zoom">{p.type === 'video' ? '▶ Play Video' : '⊕ View Image'}</span>
               </div>
             </motion.div>
           ))}
@@ -91,9 +95,13 @@ export default function Gallery() {
             >
               <button className="lightbox__close" onClick={closeLightbox}><FiX /></button>
               <button className="lightbox__nav lightbox__nav--prev" onClick={prev}><FiChevronLeft /></button>
-              <img src={photos[lightbox].src} alt={photos[lightbox].alt} className="lightbox__img" />
+              {media[lightbox].type === 'video' ? (
+                <video src={media[lightbox].src} className="lightbox__media" controls autoPlay playsInline />
+              ) : (
+                <img src={media[lightbox].src} alt={media[lightbox].alt} className="lightbox__media" />
+              )}
               <button className="lightbox__nav lightbox__nav--next" onClick={next}><FiChevronRight /></button>
-              <div className="lightbox__caption">{photos[lightbox].alt}</div>
+              <div className="lightbox__caption">{media[lightbox].alt}</div>
             </motion.div>
           </motion.div>
         )}
