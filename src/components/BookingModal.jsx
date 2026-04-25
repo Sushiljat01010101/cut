@@ -4,7 +4,7 @@ import { FiX, FiPhone, FiUser, FiCalendar, FiClock, FiCheck } from 'react-icons/
 import { FaWhatsapp } from 'react-icons/fa'
 import './BookingModal.css'
 
-const services = ['Haircut', 'Beard Trim', 'Facial', 'Shampoo', 'Hair Spa', 'Clean Shave']
+const services = ['Haircut', 'Hairstyling', 'Blow dry', 'Balayage', 'Facials', 'Skin care', 'Bridal services', 'Make-up services', 'Manicure', 'Pedicure', 'Body waxing', 'Massage', 'Spa services', 'Tanning', 'Shampoo & conditioning']
 const timeSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM']
 
 export default function BookingModal({ onClose }) {

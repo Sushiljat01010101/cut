@@ -58,7 +58,7 @@ export default function Footer({ onBooking }) {
           <div className="footer__col">
             <h4 className="footer__col-title">Our Services</h4>
             <ul className="footer__links">
-              {['Haircut & Styling', 'Beard Trim', 'Facial Treatment', 'Shampoo & Conditioning', 'Hair Spa', 'Clean Shave'].map(s => (
+              {['Haircut & Hairstyling', 'Bridal & Make-up', 'Facials & Skin care', 'Spa & Massage', 'Manicure & Pedicure', 'Balayage & Coloring'].map(s => (
                 <li key={s}><a href="#services">{s}</a></li>
               ))}
             </ul>
